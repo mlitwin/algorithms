@@ -24,3 +24,15 @@ test('Accessor at() works', () => {
     expect(m.at(1,3)).toBeUndefined();
 
 });
+
+test('.fromString works', () => {
+    const m = Matrix.fromString(`
+    1 2 3
+    4 5 6 
+`);
+
+expect(m[0][0]).toBe(1);
+expect(m[1][2]).toBe(6);
+
+
+});
