@@ -23,6 +23,21 @@ function Matrix(m, n) {
 
   Matrix.prototype = [];
 
+  Matrix.prototype.rows = function() {
+    return this.m;
+  }
+
+  Matrix.prototype.cols = function() {
+    return this.n;
+  }
+
+  Matrix.prototype.at = function(i,j) {
+    if(i < 0 || j < 0 ) return undefined;
+    if(i >= this.m || j >= this.n ) return undefined;
+    return this[i][j];
+  }
+
+
   Matrix.prototype.eachRow = function (f) {
     for (let j = 0; j < this.m; j++) {
       f(this[j], j);
