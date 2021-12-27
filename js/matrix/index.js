@@ -8,7 +8,7 @@ function initMatrix(mat, spec) {
   }
 }
 
-function Matrix(m, n) {
+function Matrix(m, n, deafultValue) {
   // shorcut / internal constructor
   if (typeof m === "object") {
     initMatrix(this, m);
@@ -18,8 +18,9 @@ function Matrix(m, n) {
   this.m = m;
   this.n = n;
 
+  const defaultV = deafultValue === undefined ? 0 : deafultValue;
   for (let j = 0; j < m; j++) {
-    this.push(new Array(n).fill(0));
+    this.push(new Array(n).fill(defaultV));
   }
 }
 

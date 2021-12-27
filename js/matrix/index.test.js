@@ -6,7 +6,13 @@ test("Creates a Matrix", () => {
   expect(m.rows()).toBe(4);
   expect(m.n).toBe(3);
   expect(m.cols()).toBe(3);
+  expect(m[0][2]).toBe(0);
 });
+
+test("Creates a Matrix with a default value", () => {
+    const m = new Matrix(4, 3, '.');
+    expect(m[0][2]).toBe('.');
+  });
 
 test("Accessor at() works", () => {
   const m = new Matrix(4, 3);
